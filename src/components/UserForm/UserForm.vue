@@ -12,22 +12,22 @@
           <label> BASIC INFO </label>
         </div>
         <div class="grid-adress-body grid-element">
-          <FieldComponent title="Street" v-model="formData.address.street"/>
-          <FieldComponent title="Suite" v-model="formData.address.suite"/>
-          <FieldComponent title="City" v-model="formData.address.city"/>
-          <FieldComponent title="Zipcode" v-model="formData.address.zipcode"/>
+          <FieldComponent :title="fieldLabels.street" v-model="formData.address.street"/>
+          <FieldComponent :title="fieldLabels.suite" v-model="formData.address.suite"/>
+          <FieldComponent :title="fieldLabels.city" v-model="formData.address.city"/>
+          <FieldComponent :title="fieldLabels.zipcode" v-model="formData.address.zipcode"/>
         </div>
         <div class="grid-company-body grid-element">
-          <FieldComponent title="Name" v-model="formData.company.name"/>
-          <FieldComponent title="CatchPhrase" v-model="formData.company.catchPhrase"/>
-          <FieldComponent title="Bs" v-model="formData.company.bs"/>
+          <FieldComponent :title="fieldLabels.name" v-model="formData.company.name"/>
+          <FieldComponent :title="fieldLabels.catchphrase" v-model="formData.company.catchPhrase"/>
+          <FieldComponent :title="fieldLabels.bs" v-model="formData.company.bs"/>
         </div>
         <div class="grid-basic-body grid-element">
-          <FieldComponent title="Name" v-model="formData.name"/>
-          <FieldComponent title="Username" v-model="formData.username"/>
-          <FieldComponent title="Email" v-model="formData.email"/>
-          <FieldComponent title="Phone" v-model="formData.phone"/>
-          <FieldComponent title="Website" v-model="formData.website"/>
+          <FieldComponent :title="fieldLabels.name" v-model="formData.name"/>
+          <FieldComponent :title="fieldLabels.username" v-model="formData.username"/>
+          <FieldComponent :title="fieldLabels.email" v-model="formData.email"/>
+          <FieldComponent :title="fieldLabels.phone" v-model="formData.phone"/>
+          <FieldComponent :title="fieldLabels.website" v-model="formData.website"/>
         </div>
       </div>
     </div>
@@ -53,21 +53,24 @@ const formData = ref({
   website: props.item.website || ""
 });
 
+const fieldLabels = {
+  name: "Name",
+  username: "Username",
+  company: "Company",
+  address: "Address",
+  email: "Email",
+  phone: "Phone",
+  website: "Website",
+  street: "Street",
+  suite: "Suite",
+  city: "City",
+  zipcode: "Zipcode",
+  catchphrase: "CatchPhrase",
+  bs: "Bs"
+}
+
 function submit() {
   const changedObjects = [];
-  const fieldLabels = {
-    name: "Name",
-    username: "Username",
-    company: "Company",
-    address: "Address",
-    email: "Email",
-    phone: "Phone",
-    website: "Website",
-    street: "Street",
-    suite: "Suite",
-    city: "City",
-    zipcode: "Zipcode"
-  }
 
   Object.keys(formData.value).forEach((key) => {
     if (
