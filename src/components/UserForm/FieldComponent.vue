@@ -34,5 +34,10 @@ defineProps({
   border: 1px solid #D9DBDA;
   border-radius: 4px;
   padding: 10px 18px 10px 18px;
+  transition: 0.5s;
+  outline: none;
+}
+.field-textbox:focus {
+  border: 1px solid #555;
 }
 </style>

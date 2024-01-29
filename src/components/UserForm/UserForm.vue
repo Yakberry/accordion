@@ -141,7 +141,6 @@ function submit() {
   background: #D9DBDA;
   border: 1px solid #D9DBDA;
 }
-
 .grid .grid-element {
   background: white;
   display: flex;
@@ -149,7 +148,6 @@ function submit() {
   text-align: left;
   padding: 10px 30px 10px 30px;
 }
-
 .grid-adress-head { grid-area: 1 / 1 / 2 / 2; }
 .grid-company-head { grid-area: 1 / 2 / 2 / 3; }
 .grid-basic-head { grid-area: 1 / 3 / 2 / 4; }

@@ -1,5 +1,5 @@
 <template>
-  <div class="head" @click="expand">
+  <div class="head" :class="[showForm ? 'showsForm' : '']" @click="expand">
     <span>{{ item.name }}</span>
     <span>{{ item.email }}</span>
     <span>{{ item.phone }}</span>
@@ -28,29 +28,29 @@ defineProps({
   display: flex;
   flex-direction: row;
 }
-
 .head > span {
   flex: 1;
   text-align: left;
 }
-
 .head::before {
-  content: url("../../assets/shevron.svg");
+  content: url("../../assets/chevron.svg");
   position: absolute;
   top: 50%;
   left: 20px;
   transform: translateY(-50%);
   font-size: 1.5em;
+  transition: 0.5s;
 }
-
+.head.showsForm:before {
+  content: url("../../assets/chevron.svg");
+  transform: rotate(-180deg) translateY(+50%);
+}
 .form-container {
   transition: height .5s;
   height: 500px;
   overflow: hidden;
 }
-
 .form-container:empty {
   height: 0;
 }
-
 </style>

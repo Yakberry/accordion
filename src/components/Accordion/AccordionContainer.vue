@@ -31,11 +31,9 @@ const onExpand = (index) => {
     showIndex.value = index;
   }
 }
-
 </script>
 
 <style scoped>
-
 .accordion {
   padding-inline: 40px 40px;
 }
